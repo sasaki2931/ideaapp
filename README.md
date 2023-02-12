@@ -9,10 +9,16 @@ DEvise　
 Vue.js
 
 # 実行手順
+```
+$ git clone https://github.com/Ishiyuka/Kaizen.git
+$ cd ideaapp
+$ bundle install
+$ rails db:create && rails db:migrate
+$ rails s
 
 
 # カタログ設計
-https://docs.google.com/spreadsheets/d/1sdaZKrWDq97vtwbtG5RBmKrAsxoTZp03ht8zUwNG7qE/edit#gid=1721464946
+https://docs.google.com/spreadsheets/d/1sdaZKrWDq97vtwbtG5RBmKrAsxoTZp03ht8zUwNG7qE/edit#gid=1409939339
 # テーブル定義所
 https://docs.google.com/spreadsheets/d/1XyDVTpXoJrRR_XqC8SMfgNk2k0_0hG0HGfA7_C4r7D4/edit#gid=807882468
 
