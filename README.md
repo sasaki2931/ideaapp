@@ -18,7 +18,7 @@ $ rails s
 ```
 
 
-# カタログ設計
+# カタログ設計 チェックシート
 https://docs.google.com/spreadsheets/d/1sdaZKrWDq97vtwbtG5RBmKrAsxoTZp03ht8zUwNG7qE/edit#gid=1409939339
 # テーブル定義所
 https://docs.google.com/spreadsheets/d/1XyDVTpXoJrRR_XqC8SMfgNk2k0_0hG0HGfA7_C4r7D4/edit#gid=807882468
