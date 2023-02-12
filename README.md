@@ -15,6 +15,7 @@ $ cd ideaapp
 $ bundle install
 $ rails db:create && rails db:migrate
 $ rails s
+```
 
 
 # カタログ設計
