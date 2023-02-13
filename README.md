@@ -24,7 +24,7 @@ https://docs.google.com/spreadsheets/d/1sdaZKrWDq97vtwbtG5RBmKrAsxoTZp03ht8zUwNG
 https://docs.google.com/spreadsheets/d/1XyDVTpXoJrRR_XqC8SMfgNk2k0_0hG0HGfA7_C4r7D4/edit#gid=807882468
 
 # ER図
-![卒業課題ER図 drawio (1)](https://user-images.githubusercontent.com/112809549/218362801-8654d5b0-0065-4eb2-a851-c585fa1763df.png)
+![卒業課題ER図 drawio (1)]![卒業課題ER図 drawio (2)](https://user-images.githubusercontent.com/112809549/218370346-72d37f7d-2832-4265-b5ff-ed5638507c0e.png)
 # 画面遷移図
 ![卒業アプリ画面遷移図 drawio (1)](https://user-images.githubusercontent.com/112809549/218361306-02d16426-b979-4d76-8c76-635cdae4d5ef.png)
 
