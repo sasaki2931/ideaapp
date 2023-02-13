@@ -1,6 +1,6 @@
 class ThemesController < ApplicationController
     def index
-      @theme = Theme.all
+      @themes = Theme.all
     end
 
     def new
