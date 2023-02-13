@@ -10,7 +10,7 @@ ransack
 
 # 実行手順
 ```
-$ git clone https://github.com/Ishiyuka/Kaizen.git
+$ git clone https://github.com/sasaki2931/ideaapp.git
 $ cd ideaapp
 $ bundle install
 $ rails db:create && rails db:migrate
