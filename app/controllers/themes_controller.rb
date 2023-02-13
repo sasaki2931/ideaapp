@@ -8,6 +8,8 @@ class ThemesController < ApplicationController
     end
 
     def create
+        Theme.create(theme_params)
+        redirect_to themes_path
     end
 
     def update
@@ -20,5 +22,10 @@ class ThemesController < ApplicationController
     def destroy
     end
 
+    private
+
+    def theme_params
+        params.require(:theme).permit(:title,:content,reword.img)
+    end
 
 end
