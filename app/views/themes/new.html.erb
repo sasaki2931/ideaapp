@@ -1,0 +1,20 @@
+<%= form_with(model: @theme, local: true) do |form| %>
+    <div class="theme_title">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="theme_content">
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+    <div class="theme_reword">
+      <%= form.label :reword %>
+      <%= form.text_field :reword %>
+    </div>
+    <div class="theme_img">
+      <%= form.label :img %>
+      <%= form.text_field :img %>
+    </div>
+    <%= form.submit %>
+<% end %>
+  
