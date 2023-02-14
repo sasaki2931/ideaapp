@@ -10,6 +10,10 @@
   <tr>
     <td><%= theme.title %></td>
     <td><%= theme.content %></td>
+
+    <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
   </tr>
 <% end %>
 </table>
+
+<%= link_to 'アイデアを募集する',new_theme_path  %>

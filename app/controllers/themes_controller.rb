@@ -12,8 +12,14 @@ class ThemesController < ApplicationController
         redirect_to themes_path
     end
 
+    def show
+      @theme = Theme.find(params[:id])
+    end
+
     def update
     end
+
+    
 
 
     def edit
