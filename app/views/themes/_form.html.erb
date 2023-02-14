@@ -1,0 +1,33 @@
+<%= form_with(model: @theme, local: true) do |form| %>
+    <% if @theme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @theme.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @theme.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="theme_title">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="theme_content">
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+    <div class="theme_reword">
+      <%= form.label :reword %>
+      <%= form.text_field :reword %>
+    </div>
+    <div class="theme_img">
+      <%= form.label :img %>
+      <%= form.text_field :img %>
+    </div>
+
+    <%= form.submit %>
+<% end %>
+  
