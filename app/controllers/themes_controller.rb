@@ -38,6 +38,7 @@ class ThemesController < ApplicationController
     end
 
     def destroy
+        @blog.destroy
     end
 
     private
