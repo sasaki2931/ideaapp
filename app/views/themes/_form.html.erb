@@ -1,4 +1,16 @@
 <%= form_with(model: @theme, local: true) do |form| %>
+    <% if @theme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @theme.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @theme.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <div class="theme_title">
       <%= form.label :title %>
       <%= form.text_field :title %>

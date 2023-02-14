@@ -12,6 +12,7 @@
     <td><%= theme.content %></td>
 
     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
+    <%= link_to "ブログを編集する", edit_blog_path(id) %>
   </tr>
 <% end %>
 </table>
