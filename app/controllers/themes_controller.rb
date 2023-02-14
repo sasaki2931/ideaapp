@@ -9,8 +9,8 @@ class ThemesController < ApplicationController
     end
 
     def create
-     @theme = Theme.new(blog_params)
-       if @blog.save
+     @theme = Theme.new(theme_params)
+       if @theme.save
          redirect_to themes_path, notice: "募集を開始しました！"
        else
          render :new
@@ -23,8 +23,8 @@ class ThemesController < ApplicationController
 
     def update
      
-      if @blog.update(blog_params)
-        redirect_to blogs_path, notice: "ブログを編集しました！"
+      if @theme.update(theme_params)
+        redirect_to blogs_path, notice: "募集を編集しました！"
       else
         render :edit
       end
@@ -39,12 +39,13 @@ class ThemesController < ApplicationController
 
     def destroy
         @blog.destroy
+        redirect_to blogs_path, notice:"募集を削除しました"
     end
 
     private
 
     def theme_params
-        params.require(:theme).permit(:title,:content,reword.img)
+        params.require(:theme).permit(:title,:content,:reword,:img)
     end
 
     def set_blog
