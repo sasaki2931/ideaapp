@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to: "themes#index"
+  
   resources :themes
+  resources :favorites, only:[create, :destroy]
   
 
   devise_for :users
