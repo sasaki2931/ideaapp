@@ -1,8 +1,13 @@
 <h1>募集詳細画面</h1>
 <p>タイトル: <%= @theme.title %></p>
 <p>内容: <%= @theme.content %></p>
-<p>報酬: <%= @theme.reowrd %></p>
+<p>報酬: <%= @theme.reword %></p>
 <p>画像: <%= @theme.img %></p>
+<td>
+  <% @theme.labels.each do |label| %>
+    <%= label.name %>
+  <% end %>
+</td>
 <% unless @theme.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>

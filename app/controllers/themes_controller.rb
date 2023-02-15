@@ -11,6 +11,7 @@ class ThemesController < ApplicationController
 
     def create
      @theme = Theme.new(theme_params)
+     @theme = current_user.themes.build(theme_params)
        if @theme.save
          redirect_to themes_path, notice: "募集を開始しました！"
        else
@@ -46,7 +47,7 @@ class ThemesController < ApplicationController
     private
 
     def theme_params
-        params.require(:theme).permit(:title,:content,:reword,:img)
+        params.require(:theme).permit(:title,:content,:reword,:img,{ label_ids: []})
     end
 
     def set_blog

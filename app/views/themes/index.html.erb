@@ -4,12 +4,19 @@
   <tr>
     <th>タイトル</th>
     <th>内容</th>
+  
+    <th>種別</th>
   </tr>
 
 <% @themes.each do |theme| %>
   <tr>
     <td><%= theme.title %></td>
     <td><%= theme.content %></td>
+    <td>
+      <% theme.labels.each do |label| %>
+        <%= label.name %>
+      <% end %>
+    </td>
 
     <td><%= link_to '詳細を確認する', theme_path(theme.id) %></td>
     <td><%= link_to "ブログを編集する", edit_theme_path(theme.id), data: { confirm: '本当に編集していいですか？' } %></td>
