@@ -11,6 +11,7 @@ class ThemesController < ApplicationController
 
     def create
      @theme = Theme.new(theme_params)
+     @theme = current_user.themes.build(theme_params)
        if @theme.save
          redirect_to themes_path, notice: "募集を開始しました！"
        else
