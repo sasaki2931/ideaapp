@@ -46,7 +46,7 @@ class ThemesController < ApplicationController
     private
 
     def theme_params
-        params.require(:theme).permit(:title,:content,:reword,:img)
+        params.require(:theme).permit(:title,:content,:reword,:img,{ label_ids: []})
     end
 
     def set_blog
