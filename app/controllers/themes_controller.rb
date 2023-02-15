@@ -19,6 +19,7 @@ class ThemesController < ApplicationController
     end
 
     def show
+      @favorite = current_user.favorites.find_by(theme_id: @theme.id)
      
     end
 
