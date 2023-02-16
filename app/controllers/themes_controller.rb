@@ -1,9 +1,15 @@
 class ThemesController < ApplicationController
-    before_action :authenticate_user!
+  
     before_action :set_blog, only: [:show, :edit, :update]
     def index
       @themes = Theme.all
     end
+
+    def top
+      
+    end
+
+    
 
     def new
       @theme = Theme.new
