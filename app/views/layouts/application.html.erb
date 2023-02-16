@@ -13,6 +13,7 @@
   <body>
     <% if user_signed_in? %>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <%= link_to 'マイページへ', user_path(current_user) %>
       ＃管理ページへ
     <% else %>
       #アプリ説明

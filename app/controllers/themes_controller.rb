@@ -33,8 +33,8 @@ class ThemesController < ApplicationController
 
     def update
      
-      if @blog.update(blog_params)
-        redirect_to blogs_path, notice: "ブログを編集しました！"
+      if @theme.update(theme_params)
+        redirect_to themes_path, notice: "ブログを編集しました！"
       else
         render :edit
       end
@@ -48,7 +48,7 @@ class ThemesController < ApplicationController
     end
 
     def destroy
-        @blog.destroy
+        @theme.destroy
     end
 
     private
