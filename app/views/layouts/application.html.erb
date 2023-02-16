@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      ＃管理ページへ
+    <% else %>
+      #アプリ説明
+    <% end %>
     <%= yield %>
   </body>
 </html>
