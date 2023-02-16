@@ -21,7 +21,8 @@ class ThemesController < ApplicationController
 
     def show
       @favorite = current_user.favorites.find_by(theme_id: @theme.id)
-     
+      @idea = Idea.new
+      @theme_ideas = @theme.ideas
     end
 
     def update
