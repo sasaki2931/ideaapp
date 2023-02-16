@@ -1,0 +1,30 @@
+<h1>アイデア詳細画面</h1>
+<td>
+  <% @theme.labels.each do |label| %>
+    <%= label.name %>
+  <% end %>
+</td>
+<p>募集タイトル: <%= @theme.title %></p>
+<p>アイデアタイトル: <%= @idea.title %></p>
+<p>内容: <%= @idea.content %></p>
+<p>画像: <%= @idea.img %></p>
+
+<%= form_with model:[@theme, @idea], local: false do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :img %>
+    <%= f.text_area :img %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
