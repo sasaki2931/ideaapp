@@ -5,9 +5,7 @@ class ThemesController < ApplicationController
       @themes = Theme.all
     end
 
-    def top
-      
-    end
+   
 
     
 
