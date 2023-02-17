@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "tops#index"
-  resource :tops, onli: [:show]
+  resource :tops, only: [:show]
   resources :favorites, only: [:create, :destroy]
   resources :themes do
     resources :ideas, only: [:create, :destroy]

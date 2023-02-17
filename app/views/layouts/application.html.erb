@@ -16,7 +16,7 @@
       <%= link_to 'マイページへ', user_path(current_user) %>
       ＃管理ページへ
     <% else %>
-      #アプリ説明
+      <%= link_to 'このアプリについて', tops_path %><br>
     <% end %>
     <%= yield %>
   </body>
