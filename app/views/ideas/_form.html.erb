@@ -1,4 +1,4 @@
-<%= form_with(model: @idea, local: true) do |form| %>
+<%= form_with(model: @idea, url: theme_ideas_path(@theme), local: true) do |form| %>
     <% if @idea.errors.any? %>
     <div id="error_explanation">
       <h2><%= @idea.errors.count %>件のエラーがあります。</h2>

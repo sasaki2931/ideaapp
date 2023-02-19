@@ -1,17 +1,18 @@
-<h1>アイデア一覧</h1>
+<h1>参加中一覧</h1>
 
 <table>
   <tr>
     <th>タイトル</th>
+    <th>テーマ</th>
   </tr>
 
 <% @ideas.each do |idea| %>
   <tr>
     <td><%= idea.title %></td>
-    <td><%= link_to '詳細を確認する', idea_path(idea.id) %></td>
-    <td><%= link_to "アイデアを編集する", edit_theme_path(idea.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to 'アイデアを削除する', idea_path(idea.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
+    <td><%= idea.theme.title %></td>
+    <td><%= link_to "募集詳細", theme_path(idea.theme) %></td>
+    <td><%= link_to "アイデアを編集する", edit_theme_idea_path(idea.theme, idea), data: { confirm: '本当に編集していいですか？' } %></td>
+   
 <% end %>
 </table>
 
