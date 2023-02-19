@@ -6,7 +6,10 @@ class ThemesController < ApplicationController
       @themes = Theme.page(params[:page]).per(10)
     end
 
-   
+   def my_theme
+    @theme = current_user.themes
+   end
+
 
     
 
