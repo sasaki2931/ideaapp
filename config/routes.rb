@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "tops#index"
+  get 'my_theme', to: 'themes#my_theme'
   resource :tops, only: [:show]
   resources :favorites, only: [:create, :destroy,:index]
   resources :themes do
