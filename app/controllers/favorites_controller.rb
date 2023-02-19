@@ -1,4 +1,8 @@
 class FavoritesController < ApplicationController
+    def index
+      @user_favorites = current_user.favorites
+    end
+
     def create
       favorite = current_user.favorites.create(theme_id: params[:theme_id])
       redirect_to themes_path, notice: "#{favorite.theme.user.name}さんのブログをお気に入り登録しました"
