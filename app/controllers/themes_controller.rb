@@ -3,6 +3,7 @@ class ThemesController < ApplicationController
     before_action :set_blog, only: [:show, :edit, :update]
     def index
       @themes = Theme.all
+      @themes = Theme.page(params[:page]).per(10)
     end
 
    
