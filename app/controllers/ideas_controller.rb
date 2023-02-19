@@ -1,10 +1,29 @@
 class IdeasController < ApplicationController
+    def index
+        @ideas = Idea.all.includes(:theme)
+        @theme = Theme.find(params[:theme_id])
+    end
+
     def create
         @theme = Theme.find(params[:theme_id])
         @idea = Idea.new(idea_params)
         @idea.user_id = current_user.id
-        @idea.post_id = @idea.id
-        @idea.save
+        @idea.theme_id = @theme.id
+        if @idea.save
+            redirect_to theme_ideas_path(@theme)
+        else
+            render 'new'
+        end
+    end
+
+    def new
+        @theme = Theme.find(params[:theme_id])
+        @idea = @theme.ideas.build
+    end
+
+    def edit
+        @theme = Theme.find(params[:theme_id])
+        @idea = Idea.find(params[:id])
     end
 
     def destroy
@@ -16,6 +35,6 @@ class IdeasController < ApplicationController
     private
 
     def idea_params
-      params.require(:idea).permit(:title,:content,img)
+      params.require(:idea).permit(:title,:content,:img)
     end
 end

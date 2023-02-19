@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :tops, only: [:show]
   resources :favorites, only: [:create, :destroy,:index]
   resources :themes do
-    resources :ideas, only: [:create, :destroy]
+    resources :ideas
   end
   
   
