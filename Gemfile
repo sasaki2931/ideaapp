@@ -7,6 +7,10 @@ gem 'devise'
 
 gem 'kaminari'
 
+gem 'rails_admin'
+
+
+
 gem 'rexml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
