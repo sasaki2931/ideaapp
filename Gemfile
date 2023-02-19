@@ -9,7 +9,7 @@ gem 'kaminari'
 
 gem 'rails_admin'
 
-
+gem 'cancancan'
 
 gem 'rexml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
