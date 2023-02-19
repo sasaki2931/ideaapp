@@ -15,6 +15,7 @@
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       <%= link_to 'マイページへ', user_path(current_user) %>
       <%= link_to 'お気に入り一覧', favorites_path(current_user) %>
+      <%= link_to 'ユーザー募集一覧', my_theme_path %>
       ＃管理ページへ
     <% else %>
       <%= link_to 'このアプリについて', tops_path %><br>
