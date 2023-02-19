@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   
   
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    get 'favorites', on: :member
+  end
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
