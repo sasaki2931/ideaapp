@@ -8,20 +8,20 @@
     <th>種別</th>
   </tr>
 
-
-<% @theme.each do |theme| %>
-    <tr>
-      <td><%= theme.title %></td>
-      <td><%= theme.content %></td>
-      <td>
-        <% theme.labels.each do |label| %>
-          <%= label.name %>
-        <% end %>
-      </td>
-  
-      <td><%= link_to '詳細を確認する', theme_path(theme.id) %></td>
-      <td><%= link_to "ブログを編集する", edit_theme_path(theme.id), data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to 'ブログを削除する', theme_path(theme.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-    </tr>
-  <% end %>
+<% @themes.each do |theme| %>
+  <tr>
+    <td><%= theme.title %></td>
+    <td><%= theme.content %></td>
+    <td>
+      <% theme.labels.each do |label| %>
+        <%= label.name %>
+      <% end %>
+    </td>
+    <td><%= link_to '編集', edit_theme_path(theme) %></td>
+    <td><%= link_to '削除', theme_path(theme), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '詳細を確認する', theme_path(theme.id) %></td>
+  </tr>
+<% end %>
 </table>
+<%= paginate @themes %>
+          

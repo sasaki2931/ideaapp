@@ -6,7 +6,7 @@ class ThemesController < ApplicationController
     end
 
    def my_theme
-    @theme = current_user.themes
+    @themes = Theme.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(10)
    end
 
     def new
