@@ -16,7 +16,7 @@
       <%= link_to 'マイページへ', user_path(current_user) %>
       <%= link_to 'お気に入り一覧', favorites_path(current_user) %>
       <%= link_to 'ユーザー募集一覧', my_theme_path %>
-      #<%= link_to '参加中一覧',theme_ideas_path(@theme) %>
+      
       <%= link_to '管理者ページへ', '/admin' %>
     <% else %>
       <%= link_to 'このアプリについて', tops_path %><br>
