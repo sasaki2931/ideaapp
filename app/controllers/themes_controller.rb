@@ -1,6 +1,5 @@
 class ThemesController < ApplicationController
-  
-    before_action :set_blog, only: [:show, :edit, :update]
+    before_action :set_theme, only: [:show, :edit, :update]
     def index
       @themes = Theme.all
       @themes = Theme.page(params[:page]).per(10)
@@ -10,17 +9,14 @@ class ThemesController < ApplicationController
     @theme = current_user.themes
    end
 
-
-    
-
     def new
       @theme = Theme.new
     end
 
     def create
      @theme = Theme.new(theme_params)
-     @theme = current_user.themes.build(theme_params)
-       if @theme.save
+     @theme.user_id = current_user.id
+     if @theme.save
          redirect_to themes_path, notice: "募集を開始しました！"
        else
          render :new
@@ -57,10 +53,10 @@ class ThemesController < ApplicationController
     private
 
     def theme_params
-        params.require(:theme).permit(:title,:content,:reword,:img,{ label_ids: []})
+        params.require(:theme).permit(:title,:content,:reword,:img,:image_cache,{ label_ids: []})
     end
 
-    def set_blog
+    def set_theme
         @theme = Theme.find(params[:id])
     end
 

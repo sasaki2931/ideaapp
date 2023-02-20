@@ -2,7 +2,10 @@
 <p>タイトル: <%= @theme.title %></p>
 <p>内容: <%= @theme.content %></p>
 <p>報酬: <%= @theme.reword %></p>
-<p>画像: <%= @theme.img %></p>
+<p>
+  <strong>画像:</strong>
+  <%= image_tag @theme.img.url %>
+</p>
 <td>
   <% @theme.labels.each do |label| %>
     <%= label.name %>

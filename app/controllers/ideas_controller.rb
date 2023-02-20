@@ -35,6 +35,6 @@ class IdeasController < ApplicationController
     private
 
     def idea_params
-      params.require(:idea).permit(:title,:content,:img)
+      params.require(:idea).permit(:title,:content,:img,:image_cache)
     end
 end

@@ -5,4 +5,5 @@ class Theme < ApplicationRecord
   has_many :labels, through: :labellings
   has_many :ideas, dependent: :destroy
   has_many :users, through: :ideas
+  mount_uploader :img, ImageUploader
 end
