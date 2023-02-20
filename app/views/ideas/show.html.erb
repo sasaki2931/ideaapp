@@ -7,10 +7,12 @@
 <p>募集タイトル: <%= @theme.title %></p>
 <p>アイデアタイトル: <%= @idea.title %></p>
 <p>内容: <%= @idea.content %></p>
-<<p>
-<strong>画像:</strong>
-<%= image_tag @idea.img.url %>
-</p>
+<% if @idea.img.present? %>
+  <p>
+    <strong>画像:</strong>
+    <%= image_tag @idea.img.url %>
+  </p>
+<% end %>
 
 <%= form_with model:[@theme, @idea], local: false do |f| %>
   <div class="field">
