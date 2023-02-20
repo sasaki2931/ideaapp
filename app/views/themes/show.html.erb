@@ -25,3 +25,20 @@
   <% end %>
 <% end %>
 
+<% if @theme.user_id == current_user.id %>
+  <h1>届いたアイデア</h1>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+
+    <% @theme_ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.title %></td>
+        <td><%= idea.content %></td>
+        <td><%= link_to '詳細を確認する', idea_path(idea.theme.id) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
