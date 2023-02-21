@@ -1,8 +1,8 @@
 class ThemesController < ApplicationController
     before_action :set_theme, only: [:show, :edit, :update]
     def index
-      @themes = Theme.all
-      @themes = Theme.page(params[:page]).per(10)
+      @search = Theme.ransack(params[:q])
+      @themes =@search.result.includes(:user).page(params[:page]).per(10)
     end
 
    def my_theme

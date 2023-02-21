@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2023_02_15_082755) do
   end
 
   create_table "labels", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "デフォルト", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,5 +1,12 @@
 <h1>募集一覧</h1>
 
+<%= search_form_for @search do |f| %>
+  <% Label.all.each do |label| %>
+    <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
+    <label><%= label.name %></label>
+  <% end %>
+  <%= f.submit "検索" %>
+<% end %>
 <table>
   <tr>
     <th>タイトル</th>
