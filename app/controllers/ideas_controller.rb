@@ -21,6 +21,11 @@ class IdeasController < ApplicationController
         @idea = @theme.ideas.build
     end
 
+    def show
+        @idea = Idea.find(params[:id])
+        @theme = @idea.theme
+    end
+
     def edit
         @theme = Theme.find(params[:theme_id])
         @idea = Idea.find(params[:id])

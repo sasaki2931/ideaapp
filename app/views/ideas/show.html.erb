@@ -14,22 +14,22 @@
   </p>
 <% end %>
 
-<%= form_with model:[@theme, @idea], local: false do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+  <%= form_with model:[@theme, @idea], local: false do |f| %>
+    <div class="field">
+      <%= f.label :タイトル %>
+      <%= f.text_field :title %>
+    </div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :img %>
-    <%= f.text_area :img %>
-  </div>
+    <div class="field">
+      <%= f.label :内容 %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="field">
+      <%= f.label :画像 %>
+      <%= f.text_area :img %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

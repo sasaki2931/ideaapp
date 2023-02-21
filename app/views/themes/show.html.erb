@@ -37,7 +37,7 @@
       <tr>
         <td><%= idea.title %></td>
         <td><%= idea.content %></td>
-        <td><%= link_to '詳細を確認する', idea_path(idea.theme.id) %></td>
+        <td><%= link_to '詳細を確認する', theme_idea_path(@theme,idea) %></td>
       </tr>
     <% end %>
   </table>
