@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+    before_action :authorize_user, only: [:show]
     def index
         @ideas = Idea.all.includes(:theme)
         @theme = Theme.find(params[:theme_id])
@@ -21,6 +22,11 @@ class IdeasController < ApplicationController
         @idea = @theme.ideas.build
     end
 
+    def show
+        @idea = Idea.find(params[:id])
+        @theme = @idea.theme
+    end
+
     def edit
         @theme = Theme.find(params[:theme_id])
         @idea = Idea.find(params[:id])
@@ -36,5 +42,13 @@ class IdeasController < ApplicationController
 
     def idea_params
       params.require(:idea).permit(:title,:content,:img,:image_cache)
+    end
+    def authorize_user
+        @idea = Idea.find(params[:id])
+        @theme = @idea.theme
+    
+        unless @theme.user_id == current_user.id
+          redirect_to root_path, alert: "権限がありません。"
+        end
     end
 end
