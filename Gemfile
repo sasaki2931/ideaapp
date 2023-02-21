@@ -9,6 +9,10 @@ gem 'kaminari'
 
 gem 'rails_admin'
 
+gem 'pry'
+
+gem 'ransack'
+
 gem 'cancancan'
 
 gem 'carrierwave'
