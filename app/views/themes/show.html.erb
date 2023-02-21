@@ -41,4 +41,14 @@
       </tr>
     <% end %>
   </table>
+
+    <h1>アイデアを採用する</h1>
+    <% @theme_ideas.each do |idea| %>
+      <p>
+      <%= check_box_tag 'idea_ids[]', idea.id %>
+      <strong>タイトル:</strong>
+      <%= idea.title %>
+      </p>
+    <% end %>
+    <%= submit_tag '選択したアイデアにメールを送る' %>
 <% end %>

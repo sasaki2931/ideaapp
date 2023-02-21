@@ -27,7 +27,7 @@ class ThemesController < ApplicationController
       @favorite = current_user.favorites.find_by(theme_id: @theme.id)
       @idea = Idea.new
       @theme_ideas = @theme.ideas
-      
+      @idea = @theme_ideas
     end
 
     def update
@@ -38,8 +38,6 @@ class ThemesController < ApplicationController
         render :edit
       end
     end
-
-    
 
 
     def edit
