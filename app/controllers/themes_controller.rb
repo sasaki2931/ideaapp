@@ -27,7 +27,7 @@ class ThemesController < ApplicationController
       @favorite = current_user.favorites.find_by(theme_id: @theme.id)
       @idea = Idea.new
       @theme_ideas = @theme.ideas
-      @idea = @theme_ideas
+    
     end
 
     def update
@@ -46,6 +46,13 @@ class ThemesController < ApplicationController
 
     def destroy
         @theme.destroy
+    end
+
+    def send_email
+      selected_idea_ids = params[:idea_ids]
+      selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
+      UserMailer.send_ideas_email(selected_ideas).deliver_now
+      redirect_to themes_path, notice: "アイデアを送信しました"
     end
 
     private

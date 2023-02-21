@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :tops, only: [:show]
   resources :favorites, only: [:create, :destroy,:index]
   resources :themes do
+    post 'send_email', on: :member
     resources :ideas
   end
   
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  
  
 end
