@@ -2,6 +2,7 @@
 <% @user_favorites.reverse_each do |favorite| %>
     <div>
       <%= favorite.theme.title %>
+  </tr>
     </div>
   <% end %>
   <% if @user_favorites.empty? %>
