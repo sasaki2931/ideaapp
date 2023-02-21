@@ -1,35 +1,17 @@
-<h1>アイデア詳細画面</h1>
-<td>
-  <% @theme.labels.each do |label| %>
-    <%= label.name %>
+<% if @theme.user_id == current_user.id %>
+  <h1>アイデア詳細画面</h1>
+  <td>
+    <% @theme.labels.each do |label| %>
+      <%= label.name %>
+    <% end %>
+  </td>
+  <p>募集タイトル: <%= @theme.title %></p>
+  <p>アイデアタイトル: <%= @idea.title %></p>
+  <p>内容: <%= @idea.content %></p>
+  <% if @idea.img.present? %>
+    <p>
+      <strong>画像:</strong>
+      <%= image_tag @idea.img.url %>
+    </p>
   <% end %>
-</td>
-<p>募集タイトル: <%= @theme.title %></p>
-<p>アイデアタイトル: <%= @idea.title %></p>
-<p>内容: <%= @idea.content %></p>
-<% if @idea.img.present? %>
-  <p>
-    <strong>画像:</strong>
-    <%= image_tag @idea.img.url %>
-  </p>
 <% end %>
-
-  <%= form_with model:[@theme, @idea], local: false do |f| %>
-    <div class="field">
-      <%= f.label :タイトル %>
-      <%= f.text_field :title %>
-    </div>
-
-    <div class="field">
-      <%= f.label :内容 %>
-      <%= f.text_area :content %>
-    </div>
-    <div class="field">
-      <%= f.label :画像 %>
-      <%= f.text_area :img %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
