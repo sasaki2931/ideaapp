@@ -5,6 +5,12 @@ html {
   body {
     margin-bottom: 60px; 
   }
+  .sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+  }
   footer {
     position: absolute;
     bottom: 0;

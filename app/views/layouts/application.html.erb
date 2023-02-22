@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <header>  
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Ideaapp</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +43,26 @@
        </ul>
       </div>
     </nav>
+    </header>
+    <div class="sidebar">
+    <% if user_signed_in? %>
+      <details>
+      <summary style="background-color: #343a40; color: white;">サイドバー</summary>
+        <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
+          <nav class ="bg-dark">
+            <%= link_to 'マイページへ', user_path(current_user) %>
+          </li>
+          <nav class ="bg-dark">
+            <%= link_to 'お気に入り一覧', favorites_path(current_user) %>
+          </li>
+          <nav class ="bg-dark">
+            <%= link_to 'ユーザー募集一覧', my_theme_path %>
+          </li> 
+          </nav>
+        </div>
+      </details>
+    <% end %>
+  </div>
     <%= yield %>
     <footer class="bg-dark text-light mt-auto">
       <div class="container">
