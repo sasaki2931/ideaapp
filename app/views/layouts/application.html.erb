@@ -11,17 +11,36 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      <%= link_to 'マイページへ', user_path(current_user) %>
-      <%= link_to 'お気に入り一覧', favorites_path(current_user) %>
-      <%= link_to 'ユーザー募集一覧', my_theme_path %>
-      <% if current_user.admin == 'true' %>
-        <%= link_to '管理者ページへ', '/admin' %>
-      <% end %>
-    <% else %>
-      <%= link_to 'このアプリについて', tops_path %><br>
-    <% end %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Ideaapp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+             </li>
+            <% if current_user.admin == 'true' %>
+              <li class="nav-item">
+                <%= link_to '管理者ページへ', '/admin', class: 'nav-link text-light' %>
+              </li>
+            <% end %>
+         <% else %>
+           <li class="nav-item">
+             <%= link_to 'このアプリについて', tops_path, class: 'nav-link text-light' %>
+           </li>
+           <li class="nav-item">
+             <%= link_to 'ユーザー登録', new_user_registration_path, class: 'nav-link text-light' %>
+           </li>
+           <li class="nav-item">
+             <%= link_to 'ログイン', new_user_session_path, class: 'nav-link text-light' %>
+           </li>
+         <% end %>
+       </ul>
+      </div>
+    </nav>
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
