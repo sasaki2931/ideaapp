@@ -19,6 +19,10 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
+
 gem 'rexml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'

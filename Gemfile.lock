@@ -303,6 +303,9 @@ DEPENDENCIES
   letter_opener_web
   listen (~> 3.3)
   mini_magick
+  net-imap
+  net-pop
+  net-smtp
   pg (~> 1.1)
   pry
   puma (~> 5.0)
