@@ -33,7 +33,7 @@ class ThemesController < ApplicationController
     def update
      
       if @theme.update(theme_params)
-        redirect_to themes_path, notice: "ブログを編集しました！"
+        redirect_to themes_path, notice: "募集を編集しました！"
       else
         render :edit
       end
@@ -52,7 +52,7 @@ class ThemesController < ApplicationController
       selected_idea_ids = params[:idea_ids]
       selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
       UserMailer.send_ideas_email(selected_ideas).deliver_now
-      redirect_to themes_path, notice: "アイデアを送信しました"
+      redirect_to themes_path, notice: "メールを送信しました"
     end
 
     private

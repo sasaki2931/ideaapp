@@ -3,7 +3,6 @@
     <div id="error_explanation">
       <h2><%= @theme.errors.count %>件のエラーがあります。</h2>
       <ul>
-
       <% @theme.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
