@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
-    before_action :set_theme, only: [:show, :edit, :update]
+    before_action :set_theme, only: [:show, :edit, :update,:destroy]
     def index
       @search = Theme.ransack(params[:q])
       @themes =@search.result.includes(:user).page(params[:page]).per(10)
@@ -17,7 +17,7 @@ class ThemesController < ApplicationController
      @theme = Theme.new(theme_params)
      @theme.user_id = current_user.id
      if @theme.save
-         redirect_to themes_path, notice: "募集を開始しました！"
+         redirect_to theme_path(@theme), notice: "募集を開始しました！"
        else
          render :new
        end
@@ -46,6 +46,7 @@ class ThemesController < ApplicationController
 
     def destroy
         @theme.destroy
+        redirect_to my_theme_path, notice: "募集を削除しました"
     end
 
     def send_email
