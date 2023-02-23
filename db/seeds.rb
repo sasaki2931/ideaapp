@@ -23,6 +23,19 @@ labels = Label.create!([
   theme.labels << labels.sample(rand(1..3))
 end
 
+Theme.all.each do |theme|
+  user = User.order('RANDOM()').first
+  rand(5..8).times do |n|
+    idea = Idea.create!(
+      title: "アイデア#{n+1}",
+      content: "詳しく#{n+1}",
+      img: 'https://example.com/img/idea.jpg',
+      theme: theme,
+      user: user
+    )
+  end
+end
+
 
 
 
