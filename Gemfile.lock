@@ -164,6 +164,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.1-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.1-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
     pry (0.14.2)
@@ -290,6 +292,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
@@ -303,6 +306,9 @@ DEPENDENCIES
   letter_opener_web
   listen (~> 3.3)
   mini_magick
+  net-imap
+  net-pop
+  net-smtp
   pg (~> 1.1)
   pry
   puma (~> 5.0)
