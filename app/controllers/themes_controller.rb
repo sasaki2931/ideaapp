@@ -31,9 +31,8 @@ class ThemesController < ApplicationController
     end
 
     def update
-     
       if @theme.update(theme_params)
-        redirect_to themes_path, notice: "募集を編集しました！"
+        redirect_to my_theme_path, notice: "募集を編集しました！"
       else
         render :edit
       end
