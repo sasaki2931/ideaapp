@@ -1,5 +1,7 @@
 <h1>募集一覧</h1>
 
+<p><%= notice %></p>
+
 <%= search_form_for @search do |f| %>
   <% Label.all.each do |label| %>
     <%= f.check_box :labels_id_eq_any, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
