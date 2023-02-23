@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/guest_sign_in', to: 'sessions#new_guest'
   end
+  devise_scope :user do
+    post 'users/guest_admin_sign_in', to: 'sessions#admin_guest'
+  end
   resources :users, only: [:show] do
     get 'favorites', on: :member
   end
