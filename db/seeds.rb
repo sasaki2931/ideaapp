@@ -34,12 +34,13 @@ Theme.all.each do |theme|
     )
   end
 end
-
-5.times do 
-  favorite = Favorites.create!(
-    theme: Theme.order('RANDOM()').first,
-    user: User.order('RANDOM()').first
-  )
+User.all.each do |user|
+  rand(5..8).times do |n|
+    favorit = Favorite.create!(
+      theme: Theme.order('RANDOM()').first,
+      user: user
+    )
+  end
 end
 
 
