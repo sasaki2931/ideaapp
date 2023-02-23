@@ -21,7 +21,7 @@ class User < ApplicationRecord
       user.password_confirmation = user.password
       user.name = '管理者'
       user.address = '岩手' 
-      user.admin = "true"
+      user.admin = true
     end
   end
 end
