@@ -24,17 +24,25 @@ labels = Label.create!([
 end
 
 Theme.all.each do |theme|
-  user = User.order('RANDOM()').first
   rand(5..8).times do |n|
     idea = Idea.create!(
       title: "アイデア#{n+1}",
       content: "詳しく#{n+1}",
       img: 'https://example.com/img/idea.jpg',
       theme: theme,
-      user: user
+      user: User.order('RANDOM()').first
     )
   end
 end
+
+5.times do 
+  favorite = Favorites.create!(
+    theme: Theme.order('RANDOM()').first,
+    user: User.order('RANDOM()').first
+  )
+end
+
+
 
 
 
