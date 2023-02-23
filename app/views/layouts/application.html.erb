@@ -24,7 +24,7 @@
             <li class="nav-item">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
              </li>
-            <% if current_user.admin == 'true' %>
+            <% if current_user.admin == true %>
               <li class="nav-item">
                 <%= link_to '管理者ページへ', '/admin', class: 'nav-link text-light' %>
               </li>
