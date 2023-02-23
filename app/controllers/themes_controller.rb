@@ -17,7 +17,7 @@ class ThemesController < ApplicationController
      @theme = Theme.new(theme_params)
      @theme.user_id = current_user.id
      if @theme.save
-         redirect_to theme_path(@theme), notice: "募集を開始しました！"
+         redirect_to themes_path, notice: "募集を開始しました！"
        else
          render :new
        end
