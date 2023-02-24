@@ -9,6 +9,7 @@ class ThemesController < ApplicationController
     @themes = Theme.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(10)
    end
 
+   
     def new
       @theme = Theme.new
     end
@@ -27,8 +28,9 @@ class ThemesController < ApplicationController
       @favorite = current_user.favorites.find_by(theme_id: @theme.id)
       @idea = Idea.new
       @theme_ideas = @theme.ideas
-    
     end
+
+   
 
     def update
       if @theme.update(theme_params)
@@ -48,12 +50,7 @@ class ThemesController < ApplicationController
         redirect_to my_theme_path, notice: "募集を削除しました"
     end
 
-    def send_email
-      selected_idea_ids = params[:idea_ids]
-      selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
-      UserMailer.send_ideas_email(selected_ideas).deliver_now
-      redirect_to themes_path, notice: "メールを送信しました"
-    end
+    
 
     private
 
@@ -64,5 +61,7 @@ class ThemesController < ApplicationController
     def set_theme
         @theme = Theme.find(params[:id])
     end
+
+
 
 end
