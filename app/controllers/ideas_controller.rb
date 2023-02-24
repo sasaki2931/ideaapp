@@ -1,10 +1,10 @@
 class IdeasController < ApplicationController
     before_action :authorize_user, only: [:show]
     def index
-        @ideas = Idea.all.includes(:theme)
+        @search = Idea.where(theme_id: params[:theme_id]).ransack(params[:q])
+        @themes = @search.result.includes(:theme, :user).page(params[:page]).per(10)
         @theme = Theme.find(params[:theme_id])
     end
-
     def create
         @theme = Theme.find(params[:theme_id])
         @idea = Idea.new(idea_params)

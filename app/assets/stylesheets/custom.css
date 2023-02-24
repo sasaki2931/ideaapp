@@ -4,6 +4,7 @@ html {
   }
   body {
     margin-bottom: 60px; 
+    text-align: center;
   }
   .sidebar {
     width: 200px;
@@ -11,6 +12,19 @@ html {
     border: 1px solid #ccc;
     margin-right: 20px;
   }
+  table {
+    margin: auto;
+  }
+  nav.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  nav.pagination .page {
+    margin: 0 5px;
+  }
+ 
   footer {
     position: absolute;
     bottom: 0;

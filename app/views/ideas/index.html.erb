@@ -6,7 +6,7 @@
     <th>テーマ</th>
   </tr>
 
-<% @ideas.each do |idea| %>
+<% @themes.each do |idea| %>
   <tr>
     <td><%= idea.title %></td>
     <td><%= idea.theme.title %></td>
@@ -15,4 +15,7 @@
    
 <% end %>
 </table>
+
+<%= paginate @themes %>
+
 
