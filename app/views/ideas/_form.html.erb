@@ -1,37 +1,25 @@
 <%= form_with(model: @idea, url: theme_ideas_path(@theme), local: true) do |form| %>
-    <% if @idea.errors.any? %>
+  <% if @idea.errors.any? %>
     <div id="error_explanation">
       <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
       <ul>
-
-      <% @idea.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @idea.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
   <div class="idea_title">
-    <%= form.label :title %>
+    <%= form.label :title %><br>
     <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
   </div>
   <div class="idea_content">
-    <%= form.label :content %>
-    <%= form.text_field :content, placeholder: "内容を入力してください" %>
+    <%= form.label :content %><br>
+    <%= form.text_area :content, placeholder: "内容を入力してください", rows: 5 %>
   </div>
   <div class="idea_img">
-    <%= form.label :img %>
-    <div class="idea_title">
-  <%= form.label :title %>
-  <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
-</div>
-<div class="idea_content">
-  <%= form.label :content %>
-  <%= form.text_field :content, placeholder: "内容を入力してください" %>
-</div>
-<div class="idea_img">
-  <%= form.label :img %>
-  <%= form.file_field :img %>
-</div>
-  </div>
-    <%= form.submit %>
+    <%= form.label :img %><br>
+    <%= form.file_field :img %>
+  </div><br>
+  <%= form.submit %>
 <% end %>

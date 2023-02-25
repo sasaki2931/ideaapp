@@ -12,9 +12,7 @@ html {
     border: 1px solid #ccc;
     margin-right: 20px;
   }
-  table {
-    margin: auto;
-  }
+ 
   nav.pagination {
     display: flex;
     justify-content: center;
@@ -42,3 +40,31 @@ html {
   ul li:before {
     content: none;
   }
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    
+  }
+  th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  th.title, td.title {
+    width: 150px;
+  }
+  
+  th.type, td.type {
+    width: 100px;
+  }
+  th.reword,td.reword{
+    width: 100px;
+  }
+  th.content, td.content {
+    width: 70%;
+  }
+  
+  
+  

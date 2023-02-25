@@ -11,26 +11,25 @@
   <% end %>
 
   <div class="theme_title">
-    <%= form.label :title %>
+    <%= form.label :title %><br>
     <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
   </div>
-  <div class="theme_content">
-    <%= form.label :content %>
-    <%= form.text_field :content, placeholder: "内容を入力してください" %>
-  </div>
+  <div class="field"><br>
+    <%= form.label :カテゴリ %><br>
+    <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
+  </div><br>
   <div class="theme_reword">
-    <%= form.label :reword %>
+    <%= form.label :reword %><br>
     <%= form.text_field :reword, placeholder: "報酬を入力してください" %>
   </div>
+  <div class="theme_content">
+    <%= form.label :content %><br>
+    <%= form.text_area :content,size: '50x10',placeholder: "内容を入力してください" %>
+  </div>
   <div class="theme_img">
-    <%= form.label :img %>
+    <%= form.label :img %><br>
     <%= form.file_field :img, placeholder: "画像を選択してください" %>
-  </div>
-  <div class="field">
-    <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
-  </div>
-
-
+  </div><br>
     <%= form.submit %>
 <% end %>
   
