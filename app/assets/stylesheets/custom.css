@@ -44,45 +44,27 @@ html {
     margin: auto;
     border-collapse: collapse;
     margin-bottom: 50px;
+    
   }
-  
-  thead th {
-    width: 200px;
+  th, td {
+    border: 1px solid black;
     text-align: center;
     padding: 5px;
-    border: 1px solid #ddd;
   }
   
-  tbody td.title {
-    width: 200px;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid #ddd;
+  th.title, td.title {
+    width: 150px;
   }
   
-  tbody td.type {
+  th.type, td.type {
     width: 100px;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid #ddd;
   }
-  
-  tbody td.content {
-    width: 300px;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid #ddd;
+  th.reword,td.reword{
+    width: 100px;
   }
-  
-  tbody td {
-    padding: 5px;
-    border: 1px solid #ddd;
+  th.content, td.content {
+    width: 70%;
   }
-  
-  tbody tr:nth-child(2n) td {
-    background-color: #f2f2f2;
-  }
-  
   
   
   
