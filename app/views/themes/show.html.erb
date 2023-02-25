@@ -27,6 +27,7 @@
 
 <% if @theme.user_id == current_user.id %>
   <h1>届いたアイデア</h1>
+  <% if @theme_ideas.any? %>
   <table>
     <tr>
       <th>タイトル</th>
@@ -40,17 +41,24 @@
         <td><%= link_to '詳細を確認する', theme_idea_path(@theme,idea) %></td>
       </tr>
     <% end %>
-  </table>
+    </table>
+    <% else %>
+      <p>まだアイデアはありません</p>
+    <% end %>
   <%= form_tag send_email_theme_path(@theme), method: :post do %>
     <h1>アイデアを採用する</h1>
-    <% @theme_ideas.each do |idea| %>
-      <p>
-        <%= check_box_tag 'idea_ids[]', idea.id %>
-        <strong>タイトル:</strong>
-        <%= idea.title %>
-      </p>
+    <% if @theme_ideas.any? %>
+      <% @theme_ideas.each do |idea| %>
+        <p>
+          <%= check_box_tag 'idea_ids[]', idea.id %>
+          <strong>タイトル:</strong>
+          <%= idea.title %>
+        </p>
+      <% end %>
+      <%= submit_tag '選択したアイデアにメールを送る' %>
+    <% else %>
+      <p>アイデアがないので選択できません</p>
     <% end %>
-    <%= submit_tag '選択したアイデアにメールを送る' %>
   <% end %>
 <% end %>
 
