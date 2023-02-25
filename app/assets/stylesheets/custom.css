@@ -35,3 +35,10 @@ html {
     color: #f8f9fa;
     font-size: 6px;
   }
+  ul {
+    list-style: none;
+  }
+  
+  ul li:before {
+    content: none;
+  }
