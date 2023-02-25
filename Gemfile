@@ -5,6 +5,8 @@ ruby '3.0.1'
 
 gem 'devise'
 
+gem 'devise-i18n'
+
 gem 'kaminari'
 
 gem 'rails_admin'

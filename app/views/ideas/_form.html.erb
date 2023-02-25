@@ -10,20 +10,28 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="idea_title">
+    <%= form.label :title %>
+    <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
+  </div>
+  <div class="idea_content">
+    <%= form.label :content %>
+    <%= form.text_field :content, placeholder: "内容を入力してください" %>
+  </div>
+  <div class="idea_img">
+    <%= form.label :img %>
     <div class="idea_title">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-    <div class="idea_content">
-      <%= form.label :content %>
-      <%= form.text_field :content %>
-    </div>
-    <div class="idea_img">
-      <%= form.label :img %>
-      <%= form.file_field :img %>
-    </div>
-
+  <%= form.label :title %>
+  <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
+</div>
+<div class="idea_content">
+  <%= form.label :content %>
+  <%= form.text_field :content, placeholder: "内容を入力してください" %>
+</div>
+<div class="idea_img">
+  <%= form.label :img %>
+  <%= form.file_field :img %>
+</div>
+  </div>
     <%= form.submit %>
 <% end %>
-  

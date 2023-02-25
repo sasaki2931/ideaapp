@@ -1,26 +1,29 @@
 ja:
-  user:
+  ja:
+  activerecord:
+    models:
+      theme: テーマ
+      user: ユーザー
+    attributes:
+      theme:
+        title: タイトル
+        content: 内容
+        img: 画像
+        reword: 報酬
+      user:
+        title: タイトル
         name: 名前
         email: メールアドレス
+        address: アドレス
         current_password: 現在のパスワード
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: ログインを記憶
-        address: 住所
-        admin: 管理者権限
-  themes: 
-          title: タイトル
-          content: 本文
-          reword: 報酬
-          img: 画像
-  labels:
-          name: 種類
-  ideas:
-         title: タイトル
-         content: 本文
-         img: 画像
-         
-  
+      idea:
+        title: タイトル
+        content: 内容
+        img: 画像
+
              
               
 
