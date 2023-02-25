@@ -9,27 +9,30 @@
   <% end %>
   <%= f.submit "検索" %>
 <% end %>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  
-    <th>種別</th>
-  </tr>
 
 <% @themes.each do |theme| %>
-  <tr>
-    <td><%= theme.title %></td>
-    <td><%= theme.content %></td>
-    <td>
-      <% theme.labels.each do |label| %>
-        <%= label.name %>
-      <% end %>
-    </td>
-    <td><%= link_to '詳細を確認する', theme_path(theme.id) %></td>
-  </tr>
+  <table>
+  <thead>
+    <tr>
+      <th class="title">タイトル</th>
+      <th class="type">種別</th><td>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td class="title"><%= theme.title %></td>
+        <td class="type">
+          <% theme.labels.each do |label| %>
+            <%= label.name %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= link_to '詳細を確認する', theme_path(theme.id) %></td>
+      </tr>
+  </tbody>
+  </table>
 <% end %>
-</table>
 
   <%= paginate @themes %>
 

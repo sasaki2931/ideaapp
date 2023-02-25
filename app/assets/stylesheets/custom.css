@@ -12,9 +12,7 @@ html {
     border: 1px solid #ccc;
     margin-right: 20px;
   }
-  table {
-    margin: auto;
-  }
+ 
   nav.pagination {
     display: flex;
     justify-content: center;
@@ -42,3 +40,49 @@ html {
   ul li:before {
     content: none;
   }
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+  }
+  
+  thead th {
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  tbody td.title {
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  tbody td.type {
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  tbody td.content {
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  tbody td {
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  tbody tr:nth-child(2n) td {
+    background-color: #f2f2f2;
+  }
+  
+  
+  
+  
