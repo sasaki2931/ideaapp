@@ -92,6 +92,8 @@ ja:
   errors:
     format: "%{attribute}%{message}"
     messages:
+      Title: タイトル
+      Content: 内容
       accepted: を受諾してください
       blank: を入力してください
       confirmation: と%{attribute}の入力が一致しません
