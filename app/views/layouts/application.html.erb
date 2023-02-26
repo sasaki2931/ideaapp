@@ -23,7 +23,8 @@
           <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
-             </li>
+              <%= link_to 'TOPページに戻る', '/themes' %>
+             </li
             <% if current_user.admin == true %>
               <li class="nav-item">
                 <%= link_to '管理者ページへ', '/admin', class: 'nav-link text-light' %>
