@@ -1,7 +1,6 @@
 FactoryBot.define do
     factory :label do
-      name { "地域問題" }
+      name { "デフォルト" }
+      id {"1"}
     end
-    
 end
-  

@@ -27,6 +27,7 @@ RSpec.describe '募集管理機能', type: :system do
           expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
         end
       end
+    end
       context '募集が作成日時の降順に並んでいる場合' do
         it '新しいタスクが一番上に表示される' do
           new_theme = FactoryBot.create(:theme, user: user, title: '新しい募集')
@@ -41,7 +42,6 @@ RSpec.describe '募集管理機能', type: :system do
         it '該当タスクの内容が表示される' do
           theme = FactoryBot.create(:theme, user: user)
           visit theme_path(theme.id)
-
           expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
         end
       end
