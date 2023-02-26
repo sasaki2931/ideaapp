@@ -1,13 +1,22 @@
 <h1>お気に入り一覧</h1>
-<% @user_favorites.reverse_each do |favorite| %>
-    <div>
-      <%= favorite.theme.title %>
-  </tr>
-    </div>
-  <% end %>
-  <% if @user_favorites.empty? %>
-    <h2>お気に入りはありません</h2>
-  <% end %>
+<% if @user_favorites.empty? %>
+  <h2>お気に入りはありません</h2>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>テーマ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_favorites.reverse_each do |favorite| %>
+        <tr>
+          <td><%= favorite.theme.title %></td>
+          <td><%= link_to '詳細を確認する', theme_path(favorite.theme.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
   
-    
-  <%= link_to 'topページへ',themes_path  %>
