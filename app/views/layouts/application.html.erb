@@ -46,22 +46,20 @@
     </header>
     <div class="sidebar">
     <% if user_signed_in? %>
-      <details>
-      <summary style="background-color: #343a40; color: white;">サイドバー</summary>
-        <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
-          <nav class ="bg-dark">
-            <%= link_to 'マイページへ', user_path(current_user) %>
-          </li>
-          <nav class ="bg-dark">
-            <%= link_to 'お気に入り一覧', favorites_path(current_user) %>
-          </li>
-          <nav class ="bg-dark">
-            <%= link_to 'ユーザー募集一覧', my_theme_path %>
-          </li> 
-          </nav>
-        </div>
-      </details>
-    <% end %>
+    <details>
+    <summary style="background-color: #343a40; color: white;">サイドバー</summary>
+    <nav class ="bg-dark">
+      <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
+          <ul>
+            <li><%= link_to 'マイページへ', user_path(current_user) %></li>
+            <li><%= link_to 'お気に入り一覧', favorites_path(current_user) %></li>
+            <li><%= link_to 'ユーザー募集一覧', my_theme_path %></li> 
+            <li><%= link_to 'アイデアを募集する',new_theme_path  %></li> 
+          </ul>
+      </div>
+    </nav>
+    </details>
+ <% end %>
   </div>
     <%= yield %>
     <footer class="bg-dark text-light mt-auto">

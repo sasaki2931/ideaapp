@@ -2,9 +2,10 @@
 
 
 
-
-<%= link_to 'ユーザー登録', new_user_registration_path %><br>
-<%= link_to 'ログイン', new_user_session_path %><br>
-<%= link_to 'このアプリについて', tops_path %><br>
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %><br>
-<%= link_to 'ゲストログイン（管理者用）', users_guest_admin_sign_in_path, method: :post, class: "login" %>
+<div class="button-group"> 
+  <%= link_to 'ユーザー登録', new_user_registration_path,class: "btn btn-primary btn-lg"  %><br>
+  <%= link_to 'ログイン', new_user_session_path,class: "btn btn-primary btn-lg" %> <br>
+  <%= link_to 'このアプリについて', tops_path,class: "btn btn-primary btn-lg" %> <br>
+  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login",class: "btn btn-primary btn-lg" %><br>
+  <%= link_to 'ゲストログイン（管理者用）', users_guest_admin_sign_in_path, method: :post, class: "login",class: "btn btn-primary btn-lg" %> 
+</div>
