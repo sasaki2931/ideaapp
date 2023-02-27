@@ -6,13 +6,12 @@
     <th>テーマ</th>
   </tr>
 
-<% @themes.each do |idea| %>
-  <tr>
-    <td><%= idea.title %></td>
-    <td><%= idea.theme.title %></td>
-    <td><%= link_to "募集詳細", theme_path(idea.theme) %></td>
-    <td><%= link_to "アイデアを編集する", edit_theme_idea_path(idea.theme, idea), data: { confirm: '本当に編集していいですか？' } %></td>
-   
+  <% @themes.each do |idea| %>
+    <tr>
+      <td><%= idea.title %></td>
+      <td><%= idea.theme.title %></td>
+      <td><%= link_to "募集詳細", theme_path(idea.theme) %></td>
+      <td><%= link_to "アイデアを編集する", edit_theme_idea_path(idea.theme, idea), data: { confirm: '本当に編集していいですか？' } %></td>
 <% end %>
 </table>
 

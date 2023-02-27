@@ -6,15 +6,15 @@
     <td><%= @theme.title %></td>
   </tr>
   <tr>
-  <th>報酬:</th>
-  <td><%= @theme.reword %></td>
+    <th>報酬:</th>
+    <td><%= @theme.reword %></td>
   </tr>
   <tr>
     <th>ラベル:</th>
     <td>
-    <% @theme.labels.each do |label| %>
-      <%= label.name %>
-    <% end %>
+      <% @theme.labels.each do |label| %>
+        <%= label.name %>
+      <% end %>
     </td>
   </tr>
   <tr>
@@ -27,52 +27,51 @@
         <td><%= image_tag @theme.img.url %></td>
       </tr>
     <% end %>
-  </table>
-    <% unless @theme.user_id == current_user.id %>
+</table>
+  <% unless @theme.user_id == current_user.id %>
     <%= link_to '参加する', new_theme_idea_path(@theme) %>
-<br>
-  <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'お気に入りする', favorites_path(theme_id: @theme.id), method: :post, class: 'btn btn-primary' %>
+    <br>
+      <% if @favorite.present? %>
+        <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+      <% else %>
+        <%= link_to 'お気に入りする', favorites_path(theme_id: @theme.id), method: :post, class: 'btn btn-primary' %>
+      <% end %>
   <% end %>
-<% end %>
 
-<% if @theme.user_id == current_user.id %>
-  <h1>届いたアイデア</h1>
+  <% if @theme.user_id == current_user.id %>
+    <h1>届いたアイデア</h1>
   <% if @theme_ideas.any? %>
-  <table>
-    <tr>
-      <th>タイトル</th>
-      <th>内容</th>
-    </tr>
-
-    <% @theme_ideas.each do |idea| %>
+    <table>
       <tr>
-        <td><%= idea.title %></td>
-        <td><%= idea.content %></td>
-        <td><%= link_to '詳細を確認する', theme_idea_path(@theme,idea) %></td>
+        <th>タイトル</th>
+        <th>内容</th>
       </tr>
-    <% end %>
+      <% @theme_ideas.each do |idea| %>
+        <tr>
+          <td><%= idea.title %></td>
+          <td><%= idea.content %></td>
+          <td><%= link_to '詳細を確認する', theme_idea_path(@theme,idea) %></td>
+        </tr>
+      <% end %>
     </table>
-    <% else %>
-      <p>まだアイデアはありません</p>
-    <% end %>
+  <% else %>
+    <p>まだアイデアはありません</p>
+  <% end %>
   <%= form_tag send_email_theme_path(@theme), method: :post do %>
     <h1>アイデアを採用する</h1>
-    <% if @theme_ideas.any? %>
-      <% @theme_ideas.each do |idea| %>
-        <p>
-          <%= check_box_tag 'idea_ids[]', idea.id %>
-          <strong>タイトル:</strong>
-          <%= idea.title %>
-        </p>
+      <% if @theme_ideas.any? %>
+        <% @theme_ideas.each do |idea| %>
+          <p>
+            <%= check_box_tag 'idea_ids[]', idea.id %>
+            <strong>タイトル:</strong>
+            <%= idea.title %>
+          </p>
+        <% end %>
+        <%= submit_tag '選択したアイデアにメールを送る' %>
+      <% else %>
+        <p>アイデアがないので選択できません</p>
       <% end %>
-      <%= submit_tag '選択したアイデアにメールを送る' %>
-    <% else %>
-      <p>アイデアがないので選択できません</p>
-    <% end %>
-  <% end %>
+ <% end %>
 <% end %>
 
 
