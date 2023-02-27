@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-RSpec.describe Idea, type: :model do
+RSpec.describe Label, type: :model do
     describe 'バリデーションのテスト' do
         context 'タイトルが空の場合' do
           it 'バリデーションにひっかる' do
