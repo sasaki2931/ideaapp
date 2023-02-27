@@ -26,7 +26,8 @@ https://docs.google.com/spreadsheets/d/1XyDVTpXoJrRR_XqC8SMfgNk2k0_0hG0HGfA7_C4r
 # ER図
 ![卒業課題ER図 drawio (3)](https://user-images.githubusercontent.com/112809549/218372165-79b029ff-9742-460c-aca9-ca93eb0e1303.png)
 # 画面遷移図
-![卒業アプリ画面遷移図 drawio (1)](https://user-images.githubusercontent.com/112809549/218361306-02d16426-b979-4d76-8c76-635cdae4d5ef.png)
+![卒業アプリ画面遷移図 drawio (2)](https://user-images.githubusercontent.com/112809549/221522541-a8c013c4-6801-4579-a566-211ff15443b4.png)
+
 
 # ワイヤーフレーム
 ![卒業app　ワイヤーフレーム drawio (1)](https://user-images.githubusercontent.com/112809549/218059566-c870e613-9c76-4e97-86dc-a4212e7052bd.png)
