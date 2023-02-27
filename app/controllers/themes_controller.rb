@@ -50,11 +50,14 @@ class ThemesController < ApplicationController
 
     def send_email
       selected_idea_ids = params[:idea_ids]
-      selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
-      UserMailer.send_ideas_email(selected_ideas).deliver_now
-      redirect_to themes_path, notice: "メールを送信しました"
+      if selected_idea_ids.present?
+        selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
+        UserMailer.send_ideas_email(selected_ideas).deliver_now
+        redirect_to themes_path, notice: "メールを送信しました"
+      else
+        redirect_to my_theme_path(params[:id]), alert: "アイデアが選択されていません"
+      end
     end
-
     private
 
     def theme_params
