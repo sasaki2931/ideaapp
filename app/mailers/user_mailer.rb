@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
     def send_ideas_email(ideas)
         @ideas = ideas
-        mail(to: 'recipient@example.com', subject: 'アイデアの送信')
+        mail(to: 'sasaki2931@gmail.com', subject: '採用の通知')
     end
 end
