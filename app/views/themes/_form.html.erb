@@ -1,22 +1,21 @@
 <%= form_with(model: @theme, local: true) do |form| %>
-    <% if @theme.errors.any? %>
+  <% if @theme.errors.any? %>
     <div id="error_explanation">
       <h2><%= @theme.errors.count %>件のエラーがあります。</h2>
       <ul>
-      <% @theme.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @theme.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="theme_title">
     <%= form.label :title %><br>
     <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
   </div>
   <div class="theme_reword">
-  <%= form.label :reword %><br>
-  <%= form.text_field :reword, placeholder: "報酬を入力してください" %>
+    <%= form.label :reword %><br>
+    <%= form.text_field :reword, placeholder: "報酬を入力してください" %>
   </div>
   <div class="field"><br>
     <%= form.label :カテゴリ %><br>

@@ -4,9 +4,9 @@ class ThemesController < ApplicationController
       @search = Theme.ransack(params[:q])
       @themes =@search.result.includes(:user).order(created_at: :desc).page(params[:page]).per(10)
     end
-   def my_theme
-    @themes = Theme.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(10)
-   end
+    def my_theme
+      @themes = Theme.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    end
 
    
     def new
@@ -14,20 +14,19 @@ class ThemesController < ApplicationController
     end
 
     def create
-     @theme = Theme.new(theme_params)
-     @theme.user_id = current_user.id
-     if @theme.save
-         redirect_to themes_path, notice: "募集を開始しました！"
-       else
-         render :new
-       end
+      @theme = Theme.new(theme_params)
+      @theme.user_id = current_user.id
+      if @theme.save
+        redirect_to themes_path, notice: "募集を開始しました！"
+      else
+        render :new
+      end
     end
 
     def show
       @favorite = current_user.favorites.find_by(theme_id: @theme.id)
       @idea = Idea.new
       @theme_ideas = @theme.ideas
-    
     end
 
     def update
@@ -40,7 +39,6 @@ class ThemesController < ApplicationController
 
 
     def edit
-      
     end
 
     def destroy
@@ -50,11 +48,14 @@ class ThemesController < ApplicationController
 
     def send_email
       selected_idea_ids = params[:idea_ids]
-      selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
-      UserMailer.send_ideas_email(selected_ideas).deliver_now
-      redirect_to themes_path, notice: "メールを送信しました"
+      if selected_idea_ids.present?
+        selected_ideas = Idea.where(id: selected_idea_ids, theme_id: params[:id])
+        UserMailer.send_ideas_email(selected_ideas).deliver_now
+        redirect_to themes_path, notice: "メールを送信しました"
+      else
+        redirect_to my_theme_path(params[:id]), alert: "アイデアが選択されていません"
+      end
     end
-
     private
 
     def theme_params

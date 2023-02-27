@@ -2,11 +2,11 @@
   <% if @idea.errors.any? %>
     <div id="error_explanation">
       <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
-      <ul>
-        <% @idea.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @idea.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
     </div>
   <% end %>
   <div class="idea_title">

@@ -8,6 +8,7 @@ class Theme < ApplicationRecord
   has_many :ideas, dependent: :destroy
   has_many :users, through: :ideas
   mount_uploader :img, ImageUploader
+  
   def self.ransackable_associations(auth_object = nil)
     %w[labels user]
   end

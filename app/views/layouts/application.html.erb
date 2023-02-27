@@ -13,55 +13,55 @@
 
   <body>
     <header>  
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Ideaapp</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
-              <%= link_to 'TOPページに戻る', '/themes' %>
-             </li
-            <% if current_user.admin == true %>
-              <li class="nav-item">
-                <%= link_to '管理者ページへ', '/admin', class: 'nav-link text-light' %>
-              </li>
-            <% end %>
-         <% else %>
-           <li class="nav-item">
-             <%= link_to 'このアプリについて', tops_path, class: 'nav-link text-light' %>
-           </li>
-           <li class="nav-item">
-             <%= link_to 'ユーザー登録', new_user_registration_path, class: 'nav-link text-light' %>
-           </li>
-           <li class="nav-item">
-             <%= link_to 'ログイン', new_user_session_path, class: 'nav-link text-light' %>
-           </li>
-         <% end %>
-       </ul>
-      </div>
-    </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Ideaapp</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+                  <%= link_to 'TOPページに戻る', '/themes' %>
+                </li
+                <% if current_user.admin == true %>
+                  <li class="nav-item">
+                    <%= link_to '管理者ページへ', '/admin', class: 'nav-link text-light' %>
+                  </li>
+                <% end %>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to 'このアプリについて', tops_path, class: 'nav-link text-light' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'ユーザー登録', new_user_registration_path, class: 'nav-link text-light' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'ログイン', new_user_session_path, class: 'nav-link text-light' %>
+                </li>
+             <% end %>
+           </ul>
+        </div>
+     </nav>
     </header>
     <div class="sidebar">
-    <% if user_signed_in? %>
-    <details>
-    <summary style="background-color: #343a40; color: white;">サイドバー</summary>
-    <nav class ="bg-dark">
-      <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
-          <ul>
-            <li><%= link_to 'マイページへ', user_path(current_user) %></li>
-            <li><%= link_to 'お気に入り一覧', favorites_path(current_user) %></li>
-            <li><%= link_to 'ユーザー募集一覧', my_theme_path %></li> 
-            <li><%= link_to 'アイデアを募集する',new_theme_path  %></li> 
-          </ul>
-      </div>
-    </nav>
-    </details>
- <% end %>
-  </div>
+      <% if user_signed_in? %>
+        <details>
+          <summary style="background-color: #343a40; color: white;">サイドバー</summary>
+            <nav class ="bg-dark">
+              <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
+                <ul>
+                  <li><%= link_to 'マイページへ', user_path(current_user) %></li>
+                  <li><%= link_to 'お気に入り一覧', favorites_path(current_user) %></li>
+                  <li><%= link_to 'ユーザー募集一覧', my_theme_path %></li> 
+                  <li><%= link_to 'アイデアを募集する',new_theme_path  %></li> 
+                </ul>
+              </div>
+           </nav>
+        </details>
+      <% end %>
+    </div>
     <%= yield %>
     <footer class="bg-dark text-light mt-auto">
       <div class="container">
@@ -72,8 +72,8 @@
         </div>
       </div>
    </footer>    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
