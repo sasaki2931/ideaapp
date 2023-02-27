@@ -27,7 +27,7 @@ ja:
         remember_me: "次回から自動的にログイン"
     models:
       user: "ユーザ"
-  devise:
+  users:
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
@@ -73,6 +73,11 @@ ja:
     sessions:
       new:
         sign_in: "ログイン"
+        Sign up: "登録"
+        Forgot your password?: "パスワードをお忘れですか？"
+        Log in: "ログイン"
+        signed_in: ログインしました。
+        signed_out: ログアウトしました。
     shared:
       links:
         back: "戻る"
