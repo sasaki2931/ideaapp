@@ -11,11 +11,11 @@
   <% end %>
   <div class="idea_title">
     <%= form.label :title %><br>
-    <%= form.text_field :title, placeholder: "タイトルを入力してください" %>
+    <%= form.text_field :title, placeholder: "タイトルを入力してください(30文字以下）" %>
   </div>
   <div class="idea_content">
     <%= form.label :content %><br>
-    <%= form.text_area :content, placeholder: "内容を入力してください", rows: 5 %>
+    <%= form.text_area :content, placeholder: "内容を入力してください(255文字以下)", rows: 5 %>
   </div>
   <div class="idea_img">
     <%= form.label :img %><br>
