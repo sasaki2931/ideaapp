@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root to: "tops#show"
+  root to: "tops#index"
   get 'my_theme', to: 'themes#my_theme'
-  resource :tops, only: [:index]
+  resource :tops, only: [:show]
   resources :favorites, only: [:create, :destroy,:index]
   resources :themes do
     post 'send_email', on: :member
