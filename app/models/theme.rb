@@ -1,6 +1,7 @@
 class Theme < ApplicationRecord
-  validates :title, presence: true
-  validates :content, presence: true
+  validates :title, presence: true,length: { maximum: 75 } 
+  validates :content, presence: true,length: { maximum: 255 } 
+  validates :reword, presence: true, length: { maximum: 75 } 
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :labellings, dependent: :destroy
