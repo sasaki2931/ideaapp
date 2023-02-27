@@ -57,6 +57,7 @@ ja:
         forgot_your_password: "パスワードを忘れましたか?"
         send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
         new_password: "新しいパスワード（6文字以上）"
+        Log in: "ログイン"
     registrations:
       edit:
         are_you_sure: "本当に良いですか?"

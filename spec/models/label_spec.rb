@@ -1,22 +1,23 @@
 require 'rails_helper'
-
-
-RSpec.describe Label, type: :model do
+RSpec.describe 'Labelモデル', type: :model do
   describe 'バリデーションのテスト' do
-      context 'テーマのラベルが未選択の場合' do
-        it 'バリデーションが通る' do
-          user = FactoryBot.create(:user)
-          theme = Theme.new(title: 'ラベルなし', content: '失敗テスト',user_id: user.id,label_ids: [""])
-          expect(theme).to be_valid  
-        end
+    context 'contentが空の場合' do
+      it 'バリデーションが引っかかる' do
+        label = Label.new(name: '')
+        expect(label).not_to be_valid
       end
-   end
+    end
+  end
+
+  describe 'ラベル登録' do
+    context '入力に不足がない時' do
+      it 'ラベル登録が成功する' do
+        label = Label.new(name: '地域問題')
+        expect(label).to be_valid
+      end
+    end
+  end
 end
-
-
-
-
-
 
 
 

@@ -1,11 +1,28 @@
-<h1>アイデアマン,トップページ</top><br>
 
+<h1>初めに</h1>
+  <h2>なぜアイデアマンを作成したのか？</h2>
+  <p>何かを作ったり、問題を解決したいときにアイデアが湧かずに苦しみませんか？一人でどうしようもない時は他人の力を借りましょう。このアプリでは様々な人の力を借りることでより良いアイデアを得ることができます。</p>
 
+<h1>アイデアマンの使い方</h1>
+  <h2>募集作成</h2> 
+  <p>まずはログインしてください。</p>
+  <p>アイデアを募集してみましょう。サイドバーから「アイデアを募集する」をクリックすれば新規投稿できます。</p>
+  <p>投稿したものは「ユーザー募集一覧」でチェックできます。</p>
+  <p>届いたアイデアは、投稿した募集の詳細画面でチェックできます。</p>
+  <p>最後に採用するアイデアを選択すれば相手にメールが送信され、完了です。</p>
+
+  <h2>アイデアを投稿しよう</h2>
+  <p>募集に対してアイデアを投稿することができます。</p>
+  <p>気になる募集の詳細画面を選択し、アイデアを投稿しましょう。投稿したものは「参加中」で表示されます。</p>
+  <p>アイデアが採用されればメールが届きます。</p>
+
+  <p>それではログインして使ってください。</p>
 
 <div class="button-group"> 
   <%= link_to 'ユーザー登録', new_user_registration_path,class: "btn btn-primary btn-lg"  %><br>
   <%= link_to 'ログイン', new_user_session_path,class: "btn btn-primary btn-lg" %> <br>
-  <%= link_to 'このアプリについて', tops_path,class: "btn btn-primary btn-lg" %> <br>
   <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login",class: "btn btn-primary btn-lg" %><br>
   <%= link_to 'ゲストログイン（管理者用）', users_guest_admin_sign_in_path, method: :post, class: "login",class: "btn btn-primary btn-lg" %> 
 </div>
+
+												
