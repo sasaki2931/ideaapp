@@ -65,11 +65,11 @@ group :development do
   gem 'spring'
 end
 
-gem 'letter_opener_web'
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'webdrivers'
 end
 
+gem 'letter_opener_web'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
