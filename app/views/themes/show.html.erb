@@ -32,9 +32,9 @@
     <%= link_to '参加する', new_theme_idea_path(@theme) %>
     <br>
       <% if @favorite.present? %>
-        <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+        <%= link_to '保留を解除する', favorite_path(id: @favorite.id), method: :delete %>
       <% else %>
-        <%= link_to 'お気に入りする', favorites_path(theme_id: @theme.id), method: :post, class: 'btn btn-primary' %>
+        <%= link_to '保留する', favorites_path(theme_id: @theme.id), method: :post %>
       <% end %>
   <% end %>
 
