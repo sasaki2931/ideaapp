@@ -2,9 +2,9 @@ class ThemesController < ApplicationController
     before_action :set_theme, only: [:show, :edit, :update,:destroy]
     def index
       @search = Theme.ransack(params[:q])
-      @themes =@search.result.includes(:user).order(created_at: :desc).page(params[:page]).per(10)
+      @themes =@search.result.includes(:user).order(created_at: :desc).page(params[:page]).per(3)
     end
-    def my_theme
+    def my_them
       @themes = Theme.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(10)
     end
 
