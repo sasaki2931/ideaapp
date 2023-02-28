@@ -6,34 +6,45 @@ labels = Label.create!([
   { name: '趣味' }
 ])
 
-User.create!(
-  [
-    {name: "ikeda", email:"ikeda@example.com",password:"ikedaikeda",address:"岩手"},
-    {name: "john", email:"john@example.com",password:"johnjohn",address:"岩手"},
-    {name: "satou", email:"satou@example.com",password:"satousatou",address:"岩手"},
-    {name: "ueda", email:"ueda@example.com",password:"uedaueda",address:"岩手"},
-    {name: "nakatani", email:"nakatani@example.com",password:"nakatani",address:"岩手"},
-    {name: "kawamura", email:"kawamura@example.com",password:"kawamura",address:"岩手"}
-  ]
-)
+20.times do |n|
+  user = User.create!(
+    name: "User#{n+1}",
+    email: "user#{n+1}@example.com",
+    password: "password",
+    address: "Address#{n+1}"
+  )
+  theme = Theme.create!(
+    title: "test#{n+1}",
+    content: "test#{n+1}",
+    reword: "test#{n+1}",
+    img: File.open("./app/assets/images/wallpaperbetter (2).jpg"),
+    user_id: user.id
+  )
+  theme.labels << labels.sample(rand(1..3))
+end
 
-Theme.create!(
-  [
-    {title: "助けて",content:"卒業アプリ案",reword:"ギフトカード", user_id: 1},
-    {title: "急募",content:"人口減少解決策",reword:"なし", user_id: 2},
-    {title: "急いで",content:"卒論アイデア",reword:"スマイル", user_id: 3},
-    {title: "ヘルプ",content:"作文アイデア",reword:"ギフトカード", user_id: 4},
-    {title: "助けて",content:"劇アイデア", reword:"ギフトカード",user_id: 5},
-    {title: "急募", content:"今日の晩御飯",reword:"ギフトカード",user_id: 6}
-  ]
-)
- Idea.create!(
-  [
-    {title: "筋肉",content:"なんとかなるよ", theme_id: 1,user_id: 2},
-    {title: "パワー",content:"時間が解決する", theme_id: 2,user_id: 3},
-    {title: "力",content:"ファイト", theme_id: 3,user_id: 4},
-    {title: "脳筋", content:"頑張れ",theme_id: 4,user_id: 5,},
-    {title: "パワー",content:"がんば", theme_id: 5,user_id: 6},
-    {title: "脳筋", content:"どうにかなる",theme_id: 6,user_id: 1}
-  ]
-)
+Theme.all.each do |theme|
+  rand(5..8).times do |n|
+    idea = Idea.create!(
+      title: "アイデア#{n+1}",
+      content: "詳しく#{n+1}",
+      img: 'https://example.com/img/idea.jpg',
+      theme: theme,
+      user: User.order('RANDOM()').first
+    )
+  end
+end
+User.all.each do |user|
+  rand(5..8).times do |n|
+    favorit = Favorite.create!(
+      theme: Theme.order('RANDOM()').first,
+      user: user
+    )
+  end
+end
+
+
+
+
+
+
